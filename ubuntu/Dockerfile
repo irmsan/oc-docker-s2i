@@ -6,7 +6,7 @@ FROM ubi8/ubi
 ENV BUILD_DEPS='libica-utils openssl libssl-dev openssl-ibmca time s390-tools opencryptoki'
 
 RUN set -x \
-&&  dnf update \
+&&  dnf update -y\
 &&  dnf install -y $BUILD_DEPS 
 
 CMD ["/bin/bash", "-c", "sleep infinity"]
